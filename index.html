@@ -6,9 +6,30 @@
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="shortcut icon" href="favicon.ico" />
+		<script>
+			/*登录弹窗 js实现*/
+			window.onload = function() {
+				var mask = document.getElementById("mask");
+				var login_box = document.getElementById("login_box");
+				var to_login = document.getElementById("to_login");
+				to_login.onclick = function() {
+					mask.style.display = "block";
+					login_box.style.display = "block";
+				}
+				var qu_login = document.getElementById("qu_login");
+				qu_login.onclick = function() {
+					login_box.style.display = "none";
+					mask.style.display = "none";
+				}
+			}
+		</script>
 </head>
 <body>
 <!--京东的头部导航开始-->
+<div class="mask" id="mask"></div>
+<div class="login_box" id="login_box">
+	<span class="qu_login" id="qu_login">x</span>
+</div>
 <div class="shortcut">
     <div class="w">
         <div class="fl">
@@ -19,7 +40,7 @@
         <div class="fr">
             <ul>
                 <li>
-                    <a href="#">你好，请登录</a> &nbsp;&nbsp;
+                    <a href="javascript:;" id="to_login">你好，请登录</a> &nbsp;&nbsp;
                     <a href="#" class="col-red">免费注册</a>
                 </li>
                 <li class="line"></li>
@@ -60,12 +81,19 @@
 </div>
 <!--京东头部导航结束-->
 <!--京东的topbanner部分-->
-<div class="topbanner">
+<div class="topbanner" id="jd_t_ban">
     <div class="w tp">
         <img src="images/topbanner.jpg" alt=""/>
-        <a href="javascript:;" class="close-banner"></a>
+        <a href="javascript:;" class="close-banner" id="jd_close"></a>
     </div>
 </div>
+<script>
+	var jd_close = document.getElementById("jd_close");
+	var jd_t_ban = document.getElementById("jd_t_ban");
+	jd_close.onclick = function() {
+		jd_t_ban.style.display = "none";
+	}
+</script>
 <!--京东的topbanner部分 end-->
 
 <div class="w clearfix">
@@ -198,7 +226,7 @@
     </a>
 </div>
 <div class="w main clearfix">
-    <div class="slider">
+    <div class="slider" id="slide">
         <a href="#"><img src="images/slider1.jpg" alt=""/></a>
 				<!-- 小圆点-->
 				<!-- 这里使用了  （居中：）left:50%;margin-left:width的一半 -->
@@ -211,12 +239,23 @@
             <li class="current">6</li>
         </ul>
 
-        <div class="arrow">   <!--左右两个三角-->
+        <div class="arrow" id="arrw">   <!--左右两个三角-->
             <a href="javascript:;" class="arrow-l"><</a>
             <a href="javascript:;" class="arrow-r">></a>
         </div>
 
     </div>
+		<script>
+			var slide = document.getElementById("slide");
+			var arrw = document.getElementById("arrw");
+			slide.onmouseover = function() {
+				arrw.style.display = "block";
+			}
+			slide.onmouseout = function() {
+				arrw.style.display = "none";
+			}
+			
+		</script>
     <div class="news">
         <div class="jd-news">
             <div class="dt">
