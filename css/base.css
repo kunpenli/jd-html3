@@ -499,7 +499,6 @@ s, i, em {
 	border: 1px solid darkgrey;
 	cursor: pointer;
 }
-
 /*内边距会影响盒子的大小*/
 /*继承而来的宽度是不会改变宽度的*/
 /*js的书写位置比较自由*/
